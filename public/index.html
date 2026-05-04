@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Truth & Dare 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="popup1" class="popup">
+  <h3>Enter Room 💌</h3>
+  <input id="roomInput">
+  <button onclick="nextPopup()">Next</button>
+</div>
+
+<div id="popup2" class="popup" style="display:none;">
+  <h3>Your Name 🥺</h3>
+  <input id="nameInput">
+  <button onclick="joinRoom()">Start 💕</button>
+</div>
+
+<div class="container" id="main" style="display:none;">
+  <h2>💖 Truth & Dare 💖</h2>
+
+  <div id="users"></div>
+  <div id="turnBox"><span id="turn"></span></div>
+
+  <div class="levels">
+    <button onclick="changeLevel('Easy & Fun 🟢')">Easy</button>
+    <button onclick="changeLevel('Cute & Bonding 🌷')">Cute</button>
+    <button onclick="changeLevel('Soft Feelings 💗')">Soft</button>
+    <button onclick="changeLevel('Flirty 🔥')">Flirty</button>
+    <button onclick="changeLevel('Deep 😶‍🌫️')">Deep</button>
+    <button onclick="changeLevel('Heart-to-Heart 💞')">Heart</button>
+  </div>
+
+  <div id="chat" class="chat-box"></div>
+  <div id="typing"></div>
+
+  <button id="truthBtn" onclick="chooseTruth()">Truth 💭</button>
+  <button id="dareBtn" onclick="chooseDare()">Dare 😏</button>
+
+  <input id="msg" oninput="typing()" placeholder="Type..." />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
